@@ -221,10 +221,18 @@
                     position: new kakao.maps.LatLng(place.y, place.x)
                 });
 
-                // 마커에 클릭이벤트를 등록합니다
+                // // 마커에 클릭이벤트를 등록합니다
+                // kakao.maps.event.addListener(marker, 'click', function() {
+                //     var infowindow = new kakao.maps.InfoWindow({zIndex:1});
+                //     infowindow.setContent('<div style="padding:5px;font-size:12px;">' + cafe.cname + '</div>');
+                //     infowindow.open(map, marker);
+                // });
+
+                // 인포윈도우를 바로 열어두도록 설정 (항상 표시)
+                infowindow.open(map, marker);
+
+                // 마커 클릭 시 인포윈도우를 다시 여는 이벤트
                 kakao.maps.event.addListener(marker, 'click', function() {
-                    var infowindow = new kakao.maps.InfoWindow({zIndex:1});
-                    infowindow.setContent('<div style="padding:5px;font-size:12px;">' + cafe.cname + '</div>');
                     infowindow.open(map, marker);
                 });
             }

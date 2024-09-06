@@ -47,7 +47,6 @@ $(document).ready(function () {
 
 
     var filter = {'fpark': fpark, 'fpet': fpet, 'fkids': fkids, 'fgroup': fgroup, 'sort': sort, 'page': page}
-
     var url = "cafe/select";
 
     /* sort 선택 -> ajax 전송 */
