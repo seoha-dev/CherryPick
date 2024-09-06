@@ -178,7 +178,7 @@
 
         <!--Map Start-->
         <div id="map" style="width:80%;height:350px;"></div>
-        <!-- 지도 출력 스크립트 (타임리프 변수를 사용하기 때문에 외부 js파일로 못 뺌 ㅠ) -->
+        <!-- 지도 출력 스크립트  -->
         <script th:inline="javascript">
 
             /*<![CDATA[*/
@@ -186,7 +186,7 @@
             var mapContainer = document.getElementById('map'), // 지도를 표시할 div
                 mapOption = {
                     center: new kakao.maps.LatLng(35.15306, 129.06623), // 지도의 중심좌표 (전포역)
-                    level: 3 // 지도의 확대 레벨
+                    level: 1 // 지도의 확대 레벨
                 };
 
             // 지도생성
@@ -221,10 +221,11 @@
                     position: new kakao.maps.LatLng(place.y, place.x)
                 });
 
-                // 마커에 클릭이벤트를 등록합니다
+                // 인포윈도우를 바로 열어두도록 설정 (항상 표시)
+                infowindow.open(map, marker);
+
+                // 마커 클릭 시 인포윈도우를 다시 여는 이벤트
                 kakao.maps.event.addListener(marker, 'click', function() {
-                    var infowindow = new kakao.maps.InfoWindow({zIndex:1});
-                    infowindow.setContent('<div style="padding:5px;font-size:12px;">' + cafe.cname + '</div>');
                     infowindow.open(map, marker);
                 });
             }
