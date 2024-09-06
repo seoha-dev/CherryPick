@@ -178,10 +178,9 @@ $(document).ready(function () {
     let chk = $("#bmkli_check").val();
     const lino = $("#lino").val();
     const username = $("#username").val();
-    const bmkImg = document.getElementById("bmkliImg")
     const bmkliImg = $("#bmkliImg");
     if (bmkliImg.length > 0) { //bmkliImg가 DOM LOAD 된 경우에만 실행
-        bmkImg.attr('src', chk == 1 ? "/img/bmk.png" : "/img/bmk-empty.png");
+        bmkliImg.attr('src', chk == 1 ? "/img/bmk.png" : "/img/bmk-empty.png");
     }
     //console.log("chk:"+chk);
     //console.log("lino:"+lino);
