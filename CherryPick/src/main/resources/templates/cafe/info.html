@@ -30,7 +30,7 @@
 				저장된 횟수 또는 즐겨찾기 수 </span><br>
 			<span style="font-size: 20px; color:#eee;" th:text="${cafe.cname}"><b>카페
 					이름</b></span>
-			<img id="bmkImg" src="">
+			<img id="bmkImg" src="/img/bmk-empty.png">
 			<input type="hidden" id="bmk_check" th:if="${bmk <= 0}" th:value="0">
 			<input type="hidden" id="bmk_check" th:if="${bmk > 0}" th:value="1">
 

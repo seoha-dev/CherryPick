@@ -25,17 +25,14 @@ $(document).ready(function() {
 	let chk = document.getElementById('bmk_check').value
 	const cno = $("#cno").val();
 	const username = $("#username").val();
-	const bmkImg = document.getElementById("bmkImg");
-	console.log("[bmk check]username:"+username);
-	console.log("[bmk check]cno:"+cno);
-	console.log("[bmk check]chk:"+chk);
+	const bmkImg = $("#bmkImg");
 
-	if (chk <= 0 ) {
-		bmkImg.src = "/img/bmk-empty.png";
-		
-	} else {
-		bmkImg.src = "/img/bmk.png";
-	}
+	//console.log("[bmk check]username:"+username);
+	//console.log("[bmk check]cno:"+cno);
+	//console.log("[bmk check]chk:"+chk);
+
+	bmkImg.src = chk <= 0 ? "/img/bmk-empty.png" : "/img/bmk.png";
+
 		
 	//필터링 변수 가져오기
 	const fpark = $("#f_park").val();
@@ -45,11 +42,11 @@ $(document).ready(function() {
 	const sort =  $("#f_sort").val();
 	let page = $("#page").val();
 
-	console.log("fpark:"+fpark);
-	console.log("fpet:"+fpet);
-	console.log("fkids:"+fkids);
-	console.log("fgroup:"+fgroup);
-	console.log("sort:"+sort);
+	// console.log("fpark:"+fpark);
+	// console.log("fpet:"+fpet);
+	// console.log("fkids:"+fkids);
+	// console.log("fgroup:"+fgroup);
+	// console.log("sort:"+sort);
 					
 
 	var filter = { 'fpark' : fpark, 'fpet' : fpet, 'fkids' : fkids, 'fgroup' : fgroup, 'sort' : sort, 'page' : page}
