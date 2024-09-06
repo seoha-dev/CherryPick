@@ -178,9 +178,12 @@
                         content: cname // cname을 인포윈도우에 표시할 내용으로 사용
                     });
 
+                    // info page에서는 계속 열려있게
+                    infowindow.open(map, marker);
+
                     // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
-                    kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
-                    kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+                    // kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+                    // kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
                 }
             });
 
